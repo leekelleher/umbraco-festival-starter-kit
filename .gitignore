@@ -1,0 +1,15 @@
+# GIT IGNORE FILE
+[Bb]in
+[Oo]bj
+
+_ReSharper.*
+*.suo
+*.user
+*.cache
+*.orig
+.DS_Store
+Thumbs.db
+
+packages/*
+src/_html/*
+src/Our.Umbraco.FestivalStarterKit/App_Data/*
