@@ -1,4 +1,47 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits UmbracoTemplatePage
 @{
-    Layout = "FestivalStarterKit.cshtml";
+	Layout = "FestivalStarterKit.cshtml";
+}
+
+@section HtmlHead
+{
+	@Umbraco.Field("verificationCode")
+}
+
+@section HtmlBodyContent
+{
+	@if (Model.Content.HasValue("festivalTwitterUsername"))
+	{
+		<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
+	}
+
+	@Umbraco.Field("festivalStartDate", formatAsDateWithTime: true, formatAsDateWithTimeSeparator: " | ")
+
+	@if (Model.Content.HasValue("festivalTicketUrl"))
+	{
+		<a href="@Model.Content.GetPropertyValue("festivalTicketUrl")">Tickets</a>
+	}
+	else
+	{
+		<span>Tickets sold out!</span>
+	}
+	
+	<ul>
+		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").Where(x=>x.GetPropertyValue<bool>("featureOnHomepage")))
+		{
+			<li>
+				<a href="@speaker.NiceUrl()">
+					<img src="@speaker.GetPropertyValue("speakerPhoto")" alt="@speaker.Name" />
+					<span>@speaker.Name</span>
+					<span>@speaker.GetPropertyValue("speakerText")</span>
+				</a>
+			</li>
+		}
+	</ul>
+
+	<!-- Links to View all Speakers; View full schedule -->
+
+	<!-- Venue details + link -->
+
+	<!-- Sponsors -->
 }

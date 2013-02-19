@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Package", "Build Pack
 		Build\readme.txt = Build\readme.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Umbraco Assemblies", "Umbraco Assemblies", "{04F1C33F-EF3D-4F85-90B6-D258F06752D7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.FestivalStarterKit", "Src\Our.Umbraco.FestivalStarterKit\Our.Umbraco.FestivalStarterKit.csproj", "{EC1F46B6-C0F7-4E52-9F41-A2AB3B45AA6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.FestivalStarterKit.BackOffice", "Src\Our.Umbraco.FestivalStarterKit.BackOffice\Our.Umbraco.FestivalStarterKit.BackOffice.csproj", "{00BAEE96-90F7-459B-A178-8E8B638497AA}"
@@ -37,6 +35,5 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0F945291-F264-44AF-9C6A-B1BB0B9E785E} = {C0A8BDDE-A89F-4341-8912-A7C05E5CC25F}
-		{04F1C33F-EF3D-4F85-90B6-D258F06752D7} = {C0A8BDDE-A89F-4341-8912-A7C05E5CC25F}
 	EndGlobalSection
 EndGlobal

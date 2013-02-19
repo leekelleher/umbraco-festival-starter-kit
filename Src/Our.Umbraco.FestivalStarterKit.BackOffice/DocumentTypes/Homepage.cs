@@ -23,11 +23,11 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 		[DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple, Name = "Festival Description", Description = "", Tab = Tabs.Content, Mandatory = false)]
 		public string FestivalDescription { get; set; }
 
-		[DocumentTypeProperty(UmbracoPropertyType.DatePickerWithTime, Name = "Festival Start Date", Description = "", Tab = Tabs.Content, Mandatory = true)]
-		public DateTime FestivalStartDate { get; set; }
-
 		[DocumentTypeProperty(UmbracoPropertyType.Upload, Name = "Festival Logo", Description = "", Tab = Tabs.Content, Mandatory = true)]
 		public string FestivalLogo { get; set; }
+
+		[DocumentTypeProperty(UmbracoPropertyType.DatePickerWithTime, Name = "Festival Start Date", Description = "", Tab = Tabs.Content, Mandatory = true)]
+		public DateTime FestivalStartDate { get; set; }
 
 		[DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Festival Twitter Username", Description = "", Tab = Tabs.Content, Mandatory = false)]
 		public string FestivalTwitterUsername { get; set; }

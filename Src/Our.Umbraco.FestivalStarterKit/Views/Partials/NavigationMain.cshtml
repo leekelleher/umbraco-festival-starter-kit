@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var nodes = Model.Descendants().Where(x => x.GetPropertyValue<bool>("showMainNavigation"));
+	if (nodes != null && nodes.Count() > 0)
+	{
+		<ul>
+			@foreach (var node in nodes)
+			{
+				<li><a href="@node.NiceUrl()">@node.Name</a></li>
+			}
+			@if (Model.HasValue("festivalTicketUrl"))
+			{
+				<li><a href="@Model.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
+			}
+		</ul>
+	}
+}

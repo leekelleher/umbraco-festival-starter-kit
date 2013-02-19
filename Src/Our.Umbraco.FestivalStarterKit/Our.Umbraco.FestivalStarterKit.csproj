@@ -248,6 +248,28 @@
       <Name>Our.Umbraco.FestivalStarterKit.BackOffice</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AccommodationListing.cshtml" />
+    <Content Include="Views\ContactPage.cshtml" />
+    <Content Include="Views\ContentPage.cshtml" />
+    <Content Include="Views\FestivalStarterKit.cshtml" />
+    <Content Include="Views\Homepage.cshtml" />
+    <Content Include="Views\NewsListing.cshtml" />
+    <Content Include="Views\NewsPage.cshtml" />
+    <Content Include="Views\SessionListing.cshtml" />
+    <Content Include="Views\SessionPage.cshtml" />
+    <Content Include="Views\SpeakerListing.cshtml" />
+    <Content Include="Views\SpeakerPage.cshtml" />
+    <Content Include="Views\SponsorListing.cshtml" />
+    <Content Include="Views\SponsorPage.cshtml" />
+    <Content Include="Views\VenuePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\NavigationFooter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\NavigationMain.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

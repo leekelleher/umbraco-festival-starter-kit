@@ -1,4 +1,23 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-    Layout = null;
-}
+﻿@inherits UmbracoTemplatePage
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		@RenderSection("HtmlHead", false)
+	</head>
+	<body>
+		<div>
+			<a href="/" title="@Umbraco.Field("festivalTitle", recursive: true)">
+				<img src="@Umbraco.Field("festivalLogo", recursive: true)" alt="logo" />
+			</a>
+
+			@Html.Partial("NavigationMain", Model.Content.AncestorOrSelf(1))
+
+			@RenderSection("HtmlBodyContent", false)
+
+			@Html.Partial("NavigationFooter" , Model.Content.AncestorOrSelf(1))
+
+		</div>
+		@Umbraco.Field("analyticsCode", recursive: true)
+	</body>
+</html>
