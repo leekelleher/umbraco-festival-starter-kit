@@ -7,25 +7,38 @@
 {
 	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
 	@Umbraco.Field("pageText")
-
-	<!-- List schedule -->
-	<dl>
+	<table>
+		@{ var maxSessions = Model.Content.Children.Max(x => x.Children.Count()); }
 		@foreach (var timeslot in Model.Content.Children)
 		{
-			<dt>@timeslot.Name</dt>
-			foreach (var session in timeslot.Children)
-			{
-				<dd>
-					@if (session.IsDocumentType("SessionPage"))
+			<tr>
+				<th>@timeslot.Name</th>
+				@{ var numSessions = timeslot.Children.Count(); }
+				@foreach (var session in timeslot.Children)
+				{
+					if (session.IsDocumentType("SessionPage"))
 					{
-						<a href="@session.NiceUrl()">@session.Name</a>
+						<td>
+							<a href="@session.NiceUrl()">@session.Name</a>
+						</td>
+						if (session.IsLast())
+						{
+							for (int i = 0; i < maxSessions - numSessions; i++)
+							{
+								<td>
+									<span>&nbsp;</span>
+								</td>
+							}
+						}
 					}
-					else
+					else if (session.IsDocumentType("SessionTimeout"))
 					{
-						<em>@session.Name</em>
+						<td colspan="@maxSessions">
+							<em>@session.Name</em>
+						</td>
 					}
-				</dd>
-			}
+				}
+			</tr>
 		}
-	</dl>
+	</table>
 }
