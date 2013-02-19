@@ -14,8 +14,8 @@
 			<li>
 				<a href="@speaker.NiceUrl()">
 					<img src="@speaker.GetPropertyValue("speakerPhoto")" alt="@speaker.Name" />
-					<span>@speaker.Name</span>
-					<span>@speaker.GetPropertyValue("speakerText")</span>
+					<span>@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)</span>
+					<span>@speaker.GetPropertyValue("pageText")</span>
 				</a>
 			</li>
 		}
