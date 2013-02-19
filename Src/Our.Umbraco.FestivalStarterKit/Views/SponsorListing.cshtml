@@ -1,4 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "FestivalStarterKit.cshtml";
+	Layout = "FestivalStarterKit.cshtml";
+}
+
+@section HtmlBodyContent
+{
+	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
+	@Umbraco.Field("pageText")
+
+	<ul>
+		@foreach (var sponsor in Model.Content.Children)
+		{
+			<li>
+				<a href="@sponsor.NiceUrl()">@sponsor.Name</a>
+			</li>
+		}
+	</ul>
 }

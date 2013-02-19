@@ -27,7 +27,7 @@
 	}
 	
 	<ul>
-		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").Where(x=>x.GetPropertyValue<bool>("featureOnHomepage")))
+		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").RandomOrder().Take(5))
 		{
 			<li>
 				<a href="@speaker.NiceUrl()">

@@ -1,4 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "FestivalStarterKit.cshtml";
+	Layout = "FestivalStarterKit.cshtml";
+}
+
+@section HtmlBodyContent
+{
+	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
+	@Umbraco.Field("pageText")
+
+	<ul>
+		@foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
+		{
+			<li>
+				<a href="@speaker.NiceUrl()">
+					<img src="@speaker.GetPropertyValue("speakerPhoto")" alt="@speaker.Name" />
+					<span>@speaker.Name</span>
+					<span>@speaker.GetPropertyValue("speakerText")</span>
+				</a>
+			</li>
+		}
+	</ul>
 }
