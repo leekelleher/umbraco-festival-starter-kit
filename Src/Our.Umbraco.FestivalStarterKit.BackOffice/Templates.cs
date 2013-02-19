@@ -8,6 +8,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice
 	public partial class Homepage : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.Homepage> { }
 	public partial class NewsListing : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.NewsListing> { }
 	public partial class NewsPage : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.NewsPage> { }
+	public partial class RedirectToParent : TemplateBase { }
 	public partial class SessionListing : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.SessionListing> { }
 	public partial class SessionPage : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.SessionPage> { }
 	public partial class SpeakerListing : TemplateBase<Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes.SpeakerListing> { }

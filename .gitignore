@@ -9,6 +9,7 @@ _ReSharper.*
 *.orig
 .DS_Store
 Thumbs.db
+empty.txt
 
 packages/*
 src/_html/*

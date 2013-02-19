@@ -249,7 +249,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\AccommodationListing.cshtml" />
     <Content Include="Views\ContactPage.cshtml" />
     <Content Include="Views\ContentPage.cshtml" />
     <Content Include="Views\FestivalStarterKit.cshtml" />
@@ -272,6 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partials\MetaTitle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RedirectToParent.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

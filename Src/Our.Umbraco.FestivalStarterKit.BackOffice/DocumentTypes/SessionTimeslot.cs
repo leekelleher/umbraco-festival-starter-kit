@@ -8,7 +8,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 {
 	[DocumentType(Name = "SessionTimeslot", IconUrl = "folder.gif",
 		Alias = "SessionTimeslot",
-		AllowedTemplates = new string[] { },
+		AllowedTemplates = new string[] { "RedirectToParent" },
 		AllowedChildNodeTypes = new Type[] { typeof(SessionPage), typeof(SessionTimeout) })]
 	public partial class SessionTimeslot : FestivalStarterKit
 	{
