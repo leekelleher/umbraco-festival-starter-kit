@@ -2,3 +2,4 @@
 
 * Source: [GitHub](https://github.com/leekelleher/umbraco-festival-starter-kit)
 * Twitter: [@leekelleher](http://twitter.com/leekelleher)
+* Twitter: [@RichieGreen](http://twitter.com/RichieGreen)
