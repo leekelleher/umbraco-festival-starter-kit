@@ -14,11 +14,11 @@
 				<img src="@Umbraco.Field("festivalLogo", recursive: true)" alt="logo" height="64" width="64" />
 			</a>
 
-			@Html.Partial("NavigationMain", Model.Content.AncestorOrSelf(1))
+			@Html.Partial("NavigationMain")
 
 			@RenderSection("HtmlBodyContent", false)
 
-			@Html.Partial("NavigationFooter" , Model.Content.AncestorOrSelf(1))
+			@Html.Partial("NavigationFooter")
 
 		</div>
 		@Umbraco.Field("analyticsCode", recursive: true)

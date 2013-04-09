@@ -1,6 +1,7 @@
-﻿@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoTemplatePage
 @{
-	var nodes = Model.Descendants().Where(x => x.GetPropertyValue<bool>("showFooterNavigation"));
+	var homepage = Model.Content.AncestorOrSelf(1);
+	var nodes = homepage.Descendants().Where(x => x.GetPropertyValue<bool>("showFooterNavigation"));
 	if (nodes != null && nodes.Count() > 0)
 	{
 		<ul>

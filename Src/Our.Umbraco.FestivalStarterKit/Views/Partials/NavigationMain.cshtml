@@ -1,6 +1,7 @@
-﻿@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoTemplatePage
 @{
-	var nodes = Model.Descendants().Where(x => x.GetPropertyValue<bool>("showMainNavigation"));
+	var homepage = Model.Content.AncestorOrSelf(1);
+	var nodes = homepage.Descendants().Where(x => x.GetPropertyValue<bool>("showMainNavigation"));
 	if (nodes != null && nodes.Count() > 0)
 	{
 		<ul>
@@ -8,9 +9,9 @@
 			{
 				<li><a href="@node.NiceUrl()">@node.Name</a></li>
 			}
-			@if (Model.HasValue("festivalTicketUrl"))
+			@if (Model.Content.HasValue("festivalTicketUrl"))
 			{
-				<li><a href="@Model.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
+				<li><a href="@Model.Content.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
 			}
 		</ul>
 	}

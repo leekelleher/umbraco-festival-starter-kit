@@ -13,7 +13,6 @@ empty.txt
 
 packages/*
 src/_html/*
-src/Our.Umbraco.FestivalStarterKit/App_Data/*
 src/Our.Umbraco.FestivalStarterKit/App_Browsers/*
 src/Our.Umbraco.FestivalStarterKit/App_Code/*
 src/Our.Umbraco.FestivalStarterKit/App_Data/*
