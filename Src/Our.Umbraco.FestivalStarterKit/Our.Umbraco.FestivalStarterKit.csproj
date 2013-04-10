@@ -247,6 +247,7 @@
     <Content Include="bin\x86\sqlcese40.dll" />
     <Content Include="css\dummy.txt" />
     <Content Include="default.aspx" />
+    <Content Include="js\bootswatch.js" />
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />

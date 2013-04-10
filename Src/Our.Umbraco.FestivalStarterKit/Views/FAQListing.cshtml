@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "FestivalStarterKit.cshtml";
+}
+
+
+@section HtmlBodyContent
+{
+	
+	
+
+	
+	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<div class=\"page-header\"><h1>", insertAfter: "</h1></div>")
+	@Umbraco.Field("pageText")
+
+	<dl class="faqs">
+		@foreach (var faq in Model.Content.Children)
+		{
+			<dt>@faq.Name</dt>
+				
+			foreach (var answer in faq.Children)
+			{
+					<dd>@answer.Name</dd>
+			}
+		}
+	</dl>
+}

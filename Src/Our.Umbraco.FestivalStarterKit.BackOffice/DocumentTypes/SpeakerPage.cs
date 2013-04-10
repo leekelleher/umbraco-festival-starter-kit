@@ -14,5 +14,10 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 	{
 		public SpeakerPage() { }
 		public SpeakerPage(int nodeId) : base(nodeId) { }
+
+
+        //[DocumentTypeProperty(UmbracoPropertyType.Upload, Name = "Speaker Photo", Description = "", Tab = Tabs.Content, Mandatory = false)]
+        //public string speakerPhoto { get; set; }
+
 	}
 }

@@ -5,19 +5,56 @@
 
 @section HtmlBodyContent
 {
-	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
+	
+		
+		@Umbraco.Field("pageTitle", "pageName", insertBefore: "<div class=\"page-header\"><h1>", insertAfter: "</h1></div>")
 	@Umbraco.Field("pageText")
+		<div class="row">
+		        
+					
+		            <div class="span12">
+		                  
+                        
+<div class="block team margin-top-large" id="team">
 
-	<ul>
+    @foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
+		{
+          <div class="media">
+            <div class="pull-left"> <img src="@speaker.GetPropertyValue("speakerPhoto")" style="width:150px;" width="150px"  class="img-polaroid media-object" alt="@speaker.Name"> </div>
+            <div class="media-body">
+              <h4 class="media-heading">@speaker.Name</h4>
+              <p class="role">Founder &amp; developer</p>
+              <p>Sociis nisi facilisis lorem phasellus hac in ut. Integer sed aenean mus. Urna nunc integer in arcu et. Mus sit, risus vel nisi mattis! Sit platea tortor ultrices urna placerat rhoncus diam elementum.
+                Sed! Duis, massa, porta odio, dapibus dapibus, lundium in turpis nunc et tempor. Lacus dictumst vel et cras tortor nec nec, elementum facilisis, sed penatibus?</p>
+              <ul class="inline">
+                <li><a href="#"><i class="icon-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="icon-linkedin"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="icon-google-plus"></i> Google+</a></li>
+              </ul>
+            </div>
+          </div>
+        }
+        </div>
+   
+        
+				
+	<ul class="thumbnails thumbnails-centered">
 		@foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
 		{
 			<li>
 				<a href="@speaker.NiceUrl()">
-					<img src="@speaker.GetPropertyValue("speakerPhoto")" alt="@speaker.Name" />
-					<span>@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)</span>
-					<span>@speaker.GetPropertyValue("pageText")</span>
+					<div class="thumbnail">
+						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140px" height="146px" alt="@speaker.Name" />
+						@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)<br>
+						<small>@speaker.GetPropertyValue("pageText")</small>
+				</div>
 				</a>
 			</li>
 		}
 	</ul>
+		
+		</div>
+	</div>
+		</div>
 }

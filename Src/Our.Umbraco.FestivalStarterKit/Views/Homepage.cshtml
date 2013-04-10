@@ -10,6 +10,7 @@
 
 @section HtmlBodyContent
 {
+
 	@if (Model.Content.HasValue("festivalTwitterUsername"))
 	{
 		<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
@@ -26,14 +27,16 @@
 		<span>Tickets sold out!</span>
 	}
 	
-	<ul>
-		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").RandomOrder().Take(5))
+	<ul class="thumbnails thumbnails-centered">
+		@foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
 		{
 			<li>
 				<a href="@speaker.NiceUrl()">
-					<img src="@speaker.GetPropertyValue("speakerPhoto")" alt="@speaker.Name" />
-					<span>@speaker.Name</span>
-					<span>@speaker.GetPropertyValue("speakerText")</span>
+					<div class="thumbnail">
+						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140px" height="146px" alt="@speaker.Name" />
+						@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)<br>
+						<small>@speaker.GetPropertyValue("pageText")</small>
+				</div>
 				</a>
 			</li>
 		}

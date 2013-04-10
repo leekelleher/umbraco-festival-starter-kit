@@ -215,8 +215,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\StylePicker.cs" />
     <Compile Include="DocumentTypes\ContactPage.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
+    <Compile Include="DocumentTypes\FAQ.cs" />
+    <Compile Include="DocumentTypes\FAQAnswer.cs" />
+    <Compile Include="DocumentTypes\FAQListing.cs" />
     <Compile Include="DocumentTypes\FestivalStarterKit.cs" />
     <Compile Include="DocumentTypes\Homepage.cs" />
     <Compile Include="DocumentTypes\Mixins\Content.cs" />
@@ -240,9 +244,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -5,9 +5,13 @@
 
 @section HtmlBodyContent
 {
-	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
+
+		
+	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<div class=\"page-header\"><h1>", insertAfter: "</h1></div>")
 	@Umbraco.Field("pageText")
-	<table>
+	
+	  
+	<table class="table table-bordered table-striped table-hover">
 		@{ var maxSessions = Model.Content.Children.Max(x => x.Children.Count()); }
 		@foreach (var timeslot in Model.Content.Children)
 		{

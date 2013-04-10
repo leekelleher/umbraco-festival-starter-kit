@@ -4,14 +4,14 @@
 	var nodes = homepage.Descendants().Where(x => x.GetPropertyValue<bool>("showMainNavigation"));
 	if (nodes != null && nodes.Count() > 0)
 	{
-		<ul>
+		<ul class="nav nav-pills">
 			@foreach (var node in nodes)
 			{
-				<li><a href="@node.NiceUrl()">@node.Name</a></li>
+				<li @Html.Raw(node.Id==Model.Content.Id ? "class=\"active\"" : "")><a href="@node.NiceUrl()">@node.Name</a></li>
 			}
-			@if (Model.Content.HasValue("festivalTicketUrl"))
+			@if (homepage.HasValue("festivalTicketUrl"))
 			{
-				<li><a href="@Model.Content.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
+				<li><a href="@homepage.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
 			}
 		</ul>
 	}
