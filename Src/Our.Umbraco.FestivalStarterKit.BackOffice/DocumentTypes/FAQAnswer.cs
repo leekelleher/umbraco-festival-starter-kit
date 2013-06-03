@@ -14,6 +14,9 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
     {
         public FAQAnswer () {}
         public FAQAnswer (int nodeId) : base(nodeId){}
+
+        [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor, Name = "Page Text", Description = "", Tab = Tabs.Content, Mandatory = false)]
+        public HtmlString PageText { get; set; }
         
     }
 }

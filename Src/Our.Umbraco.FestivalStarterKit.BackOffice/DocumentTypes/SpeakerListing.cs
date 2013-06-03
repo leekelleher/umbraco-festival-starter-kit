@@ -10,7 +10,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 		Alias = "SpeakerListing",
 		AllowedTemplates = new string[] { "SpeakerListing" },
 		AllowedChildNodeTypes = new Type[] { typeof(SpeakerPage) },
-		Mixins = new Type[] { typeof(Mixins.Content), typeof(Mixins.Meta), typeof(Mixins.UmbracoProperties) })]
+        Mixins = new Type[] { typeof(Mixins.Alert), typeof(Mixins.Content), typeof(Mixins.Meta), typeof(Mixins.UmbracoProperties) })]
 	public partial class SpeakerListing : FestivalStarterKit
 	{
 		#region ctor

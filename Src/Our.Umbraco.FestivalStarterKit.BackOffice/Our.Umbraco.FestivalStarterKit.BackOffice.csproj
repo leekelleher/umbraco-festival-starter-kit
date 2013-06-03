@@ -224,6 +224,7 @@
     <Compile Include="DocumentTypes\FestivalStarterKit.cs" />
     <Compile Include="DocumentTypes\Homepage.cs" />
     <Compile Include="DocumentTypes\Mixins\Content.cs" />
+    <Compile Include="DocumentTypes\Mixins\Alert.cs" />
     <Compile Include="DocumentTypes\Mixins\Meta.cs" />
     <Compile Include="DocumentTypes\Mixins\UmbracoProperties.cs" />
     <Compile Include="DocumentTypes\Mixins\Webmaster.cs" />

@@ -7,6 +7,12 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice
 		[TabName("Content")]
 		Content = 10,
 
+        [TabName("Alert")]
+        Alert = 40,
+
+        [TabName("Settings")]
+        Settings = 50,
+
 		[TabName("Webmaster")]
 		Webmaster = 60,
 

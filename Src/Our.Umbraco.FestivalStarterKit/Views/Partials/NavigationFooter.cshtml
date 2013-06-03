@@ -4,11 +4,12 @@
 	var nodes = homepage.Descendants().Where(x => x.GetPropertyValue<bool>("showFooterNavigation"));
 	if (nodes != null && nodes.Count() > 0)
 	{
-		<ul>
+        
+		<div class="links">
 			@foreach (var node in nodes)
 			{
-				<li><a href="@node.NiceUrl()">@node.Name</a></li>
+				<a href="@node.NiceUrl()">@node.Name</a>
 			}
-		</ul>
+		</div>
 	}
 }

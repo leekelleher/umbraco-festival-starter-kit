@@ -7,7 +7,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 		Alias = "SessionListing",
 		AllowedTemplates = new[] { "SessionListing" },
 		AllowedChildNodeTypes = new[] { typeof(SessionTimeslot) },
-		Mixins = new[] { typeof(Mixins.Content), typeof(Mixins.Meta), typeof(Mixins.UmbracoProperties) })]
+        Mixins = new[] { typeof(Mixins.Alert) ,typeof(Mixins.Content), typeof(Mixins.Meta), typeof(Mixins.UmbracoProperties) })]
 	public partial class SessionListing : FestivalStarterKit
 	{
 		#region ctor

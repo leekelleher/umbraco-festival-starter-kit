@@ -246,6 +246,7 @@
     <Content Include="bin\x86\sqlceqp40.dll" />
     <Content Include="bin\x86\sqlcese40.dll" />
     <Content Include="css\dummy.txt" />
+    <Content Include="css\override.css" />
     <Content Include="default.aspx" />
     <Content Include="js\bootswatch.js" />
     <Content Include="macroScripts\dummy.txt" />
@@ -301,7 +302,9 @@
   <ItemGroup>
     <Content Include="Views\RedirectToParent.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Partials\NavigationBreadcrumb.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="config\ClientDependency.config" />
   </ItemGroup>
@@ -355,6 +358,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Styles.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

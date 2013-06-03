@@ -13,7 +13,7 @@
 
 	@if (Model.Content.HasValue("festivalTwitterUsername"))
 	{
-		<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
+		<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
 	}
 
 	@Umbraco.Field("festivalStartDate", formatAsDateWithTime: true, formatAsDateWithTimeSeparator: " | ")

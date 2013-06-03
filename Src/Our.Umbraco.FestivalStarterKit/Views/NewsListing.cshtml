@@ -5,10 +5,9 @@
 
 @section HtmlBodyContent
 {
-	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<div class=\"page-header\"><h1>", insertAfter: "</h1></div>")
-	@Umbraco.Field("pageText")
 
-	<ul>
+    <div class="well" style="padding: 8px 0;">
+	<ul class="nav nav-list">
 		@foreach (var newsPage in Model.Content.Children)
 		{
 			<li>
@@ -16,4 +15,5 @@
 			</li>
 		}
 	</ul>
+    </div>
 }

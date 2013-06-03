@@ -6,7 +6,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 	[DocumentType(Name = "Homepage", IconUrl = "folder.gif",
 		Alias = "Homepage",
 		AllowedTemplates = new[] { "Homepage" },
-		AllowedChildNodeTypes = new[] { typeof(SessionListing), typeof(VenuePage), typeof(NewsListing), typeof(SponsorListing), typeof(ContactPage), typeof(ContentPage), typeof(SpeakerListing) },
+		AllowedChildNodeTypes = new[] { typeof(SessionListing), typeof(VenuePage), typeof(NewsListing), typeof(SponsorListing), typeof(ContactPage), typeof(ContentPage), typeof(SpeakerListing), typeof(FAQListing),  },
 		Mixins = new[] { typeof(Mixins.Meta), typeof(Mixins.Webmaster) })]
 	public partial class Homepage : FestivalStarterKit
 	{
@@ -34,5 +34,8 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 
 		[DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Festival Ticket Url", Description = "", Tab = Tabs.Content, Mandatory = false)]
 		public string FestivalTicketUrl { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other, OtherTypeName="Style Picker", Name = "Style Picker", Description = "", Tab = Tabs.Settings, Mandatory = false)]
+		public string StylePicker { get; set; }
 	}
 }
