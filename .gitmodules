@@ -1,0 +1,6 @@
+[submodule "Lib/FlipClock"]
+	path = Lib/FlipClock
+	url = https://github.com/objectivehtml/FlipClock.git
+[submodule "Lib/bootswatch"]
+	path = Lib/bootswatch
+	url = https://github.com/thomaspark/bootswatch.git
