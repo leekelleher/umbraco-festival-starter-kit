@@ -1,29 +1,9 @@
-﻿body {
-    margin-top:30px;
-}
-
-div.subnav {
-    margin: 0;
-}
-
-/*.breadcrumb{
-    background-color: transparent;
-    /*padding-left:10px;*/
-    margin:0;
-}
-
-
-.alert
+﻿body
 {
-margin:0px;
-
+	padding-top: 100px;
 }
 
-.alert-block {
-margin:0px;
-}
-
-.page-header {
-margin: 10px 0 0 0;
-
+#countdown li
+{
+	line-height: normal;
 }

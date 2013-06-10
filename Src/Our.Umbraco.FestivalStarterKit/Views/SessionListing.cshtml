@@ -4,7 +4,7 @@
 }
 
 @section HtmlBodyContent
-{	  
+{
 	<table class="table table-bordered table-striped table-hover">
 		@{ var maxSessions = Model.Content.Children.Max(x => x.Children.Count()); }
 		@foreach (var timeslot in Model.Content.Children)

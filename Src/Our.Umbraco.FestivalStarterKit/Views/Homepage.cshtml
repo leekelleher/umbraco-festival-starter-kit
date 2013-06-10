@@ -1,42 +1,63 @@
 ﻿@inherits UmbracoTemplatePage
-@{
-	Layout = "FestivalStarterKit.cshtml";
-}
+@{ Layout = "FestivalStarterKit.cshtml"; }
+
+@section PageHeader {}
 
 @section HtmlHead
 {
+	@if (Model.Content.HasValue("festivalStartDate")) {
+		<link rel="stylesheet" href="/css/flipclock.css" />
+	}
 	@Umbraco.Field("verificationCode")
+}
+
+@section HtmlBodyFooter
+{
+	@if (Model.Content.HasValue("festivalStartDate"))
+ {
+		<script src="/js/flipclock/libs/prefixfree.min.js"></script>
+		<script src="/js/flipclock/flipclock.min.js"></script>
+		<script>
+			$(function () {
+				var clock = $('#countdown').FlipClock(@(Math.Round(Model.Content.GetPropertyValue<DateTime>("festivalStartDate").Subtract(DateTime.UtcNow).TotalSeconds, 0)), {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
+ }
 }
 
 @section HtmlBodyContent
 {
-
-	@if (Model.Content.HasValue("festivalTwitterUsername"))
+	@if (Model.Content.HasValue("festivalTwitterUsername") || Model.Content.HasValue("festivalStartDate"))
 	{
-		<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
+		<div class="row">
+			<div class="span4">
+				<div class="well">
+					<span>Follow us for updates</span>
+					<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
+				</div>
+			</div>
+			<div class="span8">
+				<div class="well">
+					<div id="countdown"></div>
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+		</div>
 	}
 
-	@Umbraco.Field("festivalStartDate", formatAsDateWithTime: true, formatAsDateWithTimeSeparator: " | ")
-
-	@if (Model.Content.HasValue("festivalTicketUrl"))
-	{
-		<a href="@Model.Content.GetPropertyValue("festivalTicketUrl")">Tickets</a>
-	}
-	else
-	{
-		<span>Tickets sold out!</span>
-	}
-	
 	<ul class="thumbnails thumbnails-centered">
 		@foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
 		{
 			<li>
 				<a href="@speaker.NiceUrl()">
 					<div class="thumbnail">
-						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140px" height="146px" alt="@speaker.Name" />
+						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140" height="146" alt="@speaker.Name" />
 						@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)<br>
 						<small>@speaker.GetPropertyValue("pageText")</small>
-				</div>
+					</div>
 				</a>
 			</li>
 		}

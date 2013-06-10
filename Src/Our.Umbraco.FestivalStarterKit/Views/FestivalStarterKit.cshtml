@@ -1,124 +1,84 @@
 ﻿@inherits UmbracoTemplatePage
 <!DOCTYPE html>
 <html>
-  <head>
-		<meta charset="utf-8" />
-		<title>@Html.Partial("MetaTitle")</title>
-		@Umbraco.Field("metaKeywords", insertBefore: "<meta name='keywords' content='", insertAfter: "'/>")
-		@Umbraco.Field("metaDescription", insertBefore: "<meta name='description' content='", insertAfter: "'/>")
-		@RenderSection("HtmlHead", false)
-       	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bootstrap -->
-        <link href="/css/@Umbraco.Field("stylePicker", recursive: true)/bootstrap.min.css" rel="stylesheet" media="screen">
-        <!-- BootSwatch -->
-        <link href="http://bootswatch.com/css/font-awesome.min.css" rel="stylesheet">
-        <link href="http://bootswatch.com/css/bootswatch.css" rel="stylesheet">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@Html.Partial("MetaTitle")</title>
+	@Umbraco.Field("metaKeywords", insertBefore: "<meta name='keywords' content='", insertAfter: "'/>")
+	@Umbraco.Field("metaDescription", insertBefore: "<meta name='description' content='", insertAfter: "'/>")
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link rel="stylesheet" href="/css/bootswatch/@Umbraco.Field("stylePicker", recursive: true)/bootstrap.min.css" media="screen" />
+	<link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="/css/bootswatch/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/css/bootswatch/css/bootswatch.css" />
+	<link rel="stylesheet" href="/css/override.css" />
+	@RenderSection("HtmlHead", false)
+</head>
+<body id="top" data-offset="80">
+	@Html.Partial("NavigationMain")
+	<div class="container">
+		<header class="jumbotron subhead" id="overview">
+			<div class="row">
+				<div class="span6">
+					<h1>@Umbraco.Field("festivalTitle", recursive: true)</h1>
+					<p class="lead">@Umbraco.Field("festivalDescription", recursive: true)</p>
+				</div>
+				<div class="span3 offset3">
+					<div class="well">
+						<a href="/" target="_blank">
+							<img src="@Umbraco.Field("festivalLogo", recursive: true)" alt="logo" height="175" width="175" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
 
-        <link href="/css/override.css" rel="stylesheet">
-     
-	</head>
-	<body>
+		@if (IsSectionDefined("PageHeader"))
+		{
+			@RenderSection("PageHeader");
+		}
+		else
+		{
+			@Html.Partial("NavigationBreadcrumb")
 
+			if (Model.Content.HasValue("PageAlert"))
+			{
+				<div class="row">
+					<div class="span12">
+						<div class="alert alert-block">
+							<a class="close">×</a>
+							<h4 class="alert-heading">@Model.Content.GetProperty("PageAlertTitle").Value</h4>
+							@Html.Raw(Model.Content.GetProperty("PageAlert").Value)
+						</div>
+					</div>
+				</div>
+			}
 
-        <body>
-    <div class="container">
+			<div class="page-header">
+				<h1>@Umbraco.Field("pageTitle", "pageName")</h1>
+			</div>
+	
+			@Umbraco.Field("pageText")
+		}
 
+		@RenderSection("HtmlBodyContent", false)
 
-<!-- Masthead
-================================================== -->
-<header class="jumbotron subhead" id="overview">
-  <div class="row">
-    <div class="span6">
-      <h1><a href="/" title="@Umbraco.Field("festivalTitle", recursive: true)">@Umbraco.Field("festivalTitle", recursive: true)</a></h1>
-        
-      <p class="lead">@Umbraco.Field("festivalDescription", recursive: true)</p>
-    </div>
-    <div class="span4 offset2">
+		<hr />
 
-      <div class="well" style="padding: 15px 15px 0 15px;">
-        <a href="http://carboncostume.com/apple-store-genius/" target="_blank">
-          <span style="float: left; margin: 0 15px 15px 0;">
-              <img src="@Umbraco.Field("festivalLogo", recursive: true)" alt="logo" height="175" width="175" />
-          </span>
-        </a>
-        <a href="http://carboncostume.com" target="_blank">
-          <h4 style="margin-bottom: 0.4em; color: #fff;">Carbon Costume</h4>
-          <span style="display: block; margin-bottom: 1em; color: #fff;">DIY costumes using everyday gear.</span>
-        </a>
-        <div style="clear:both"></div>
-      </div>
-    </div>
-  </div>
-  <div class="subnav">
-    @Html.Partial("NavigationMain")
-  </div>
-</header>				
-			
+		<footer id="footer">
+			<p class="pull-right"><a href="#top">Back to top</a></p>
+			@Html.Partial("NavigationFooter")
+			<span>Festival Starter Kit made by <a href="http://www.umbrellainc.co.uk">Umbrella</a>.</span><br />
+			<span>Theme by <a href="http://bootswatch.com/">Bootswatch</a>, based on <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>.</span>
+		</footer>
+	</div>
 
- @if (IsSectionDefined("PageHeader")) {
-      @RenderSection("PageHeader");
-  }
-  else { 
-     
-      @Html.Partial("NavigationBreadcrumb")
-    if (Model.Content.HasValue("PageAlert"))
-    {
-        <div class="row">
-	  <div class="span12">
-	      <div class="alert alert-block">
-	        <a class="close">×</a>
-	        <h4 class="alert-heading">@Model.Content.GetProperty("PageAlertTitle").Value</h4>
-            @Html.Raw(Model.Content.GetProperty("PageAlert").Value)
-	      </div>
-	  </div>
-  </div>
-     
- }   
- 
- 
-        
-
-           
-
-
-   
-<div class="page-header">
-	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
-</div>
-     
-    
-     
-     
-	@Umbraco.Field("pageText")
-  }
-	  
-@RenderSection("HtmlBodyContent", false)
-
-
-     <!-- Footer
-      ================================================== -->
-      <hr>
-
-      <footer id="footer">
-
-
-         
-
-        <p class="pull-right"><a href="#top">Back to top</a></p>
-
-           @Html.Partial("NavigationFooter")
-
-        Made by <a href="http://thomaspark.me">Thomas Park</a>. Contact him <a href="mailto:hello@thomaspark.me">hello@thomaspark.me</a>.<br>
-        Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>.<br>
-        Based on <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. Hosted on <a href="http://pages.github.com/">GitHub</a>. Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Favicon by <a href="https://twitter.com/geraldhiller">Gerald Hiller</a>.<p></p>
-      </footer>
-
-    </div><!-- /container -->
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="/js/jquery.smooth-scroll.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/bootswatch.js"></script>
-        @Umbraco.Field("analyticsCode", recursive: true)
-	</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/js/jquery.smooth-scroll.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootswatch.js"></script>
+	@RenderSection("HtmlBodyFooter", false)
+	@Umbraco.Field("analyticsCode", recursive: true)
+</body>
 </html>
