@@ -19,6 +19,8 @@ src/Our.Umbraco.FestivalStarterKit/App_Data/*
 src/Our.Umbraco.FestivalStarterKit/App_Plugins/*
 src/Our.Umbraco.FestivalStarterKit/bin/*
 src/Our.Umbraco.FestivalStarterKit/config/*
+src/Our.Umbraco.FestivalStarterKit/css/bootswatch/*
+src/Our.Umbraco.FestivalStarterKit/*/flipclock*
 src/Our.Umbraco.FestivalStarterKit/*.as*
 src/Our.Umbraco.FestivalStarterKit/install/*
 src/Our.Umbraco.FestivalStarterKit/macroScripts/*
