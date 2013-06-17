@@ -7,11 +7,11 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice
 		[TabName("Content")]
 		Content = 10,
 
-        [TabName("Alert")]
-        Alert = 40,
+		[TabName("Social")]
+		Social = 20,
 
-        [TabName("Settings")]
-        Settings = 50,
+		[TabName("Alert")]
+		Alert = 40,
 
 		[TabName("Webmaster")]
 		Webmaster = 60,

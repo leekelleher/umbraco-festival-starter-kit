@@ -1,7 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-	Layout = "FestivalStarterKit.cshtml";
-}
+@{ Layout = "FestivalStarterKit.cshtml"; }
 
 @section HtmlBodyContent
 {
@@ -17,7 +15,7 @@
 					if (session.IsDocumentType("SessionPage"))
 					{
 						<td>
-							<a href="@session.NiceUrl()">@session.Name</a>
+							<a href="@session.Url">@session.Name</a>
 						</td>
 						if (session.IsLast())
 						{

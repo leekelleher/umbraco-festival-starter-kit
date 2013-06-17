@@ -10,17 +10,24 @@
 				{
 					<div class="media">
 						<div class="pull-left">
-							<img src="@speaker.GetPropertyValue("speakerPhoto")" width="150"  class="img-polaroid media-object" alt="@speaker.Name" />
+							<img src="@speaker.GetPropertyValue("speakerPhoto")" width="75" class="img-polaroid media-object" alt="@speaker.Name" />
 						</div>
 						<div class="media-body">
 							<h4 class="media-heading">@speaker.Name</h4>
-							<p class="role">Founder &amp; developer</p>
-							<p>Sociis nisi facilisis lorem phasellus hac in ut. Integer sed aenean mus. Urna nunc integer in arcu et. Mus sit, risus vel nisi mattis! Sit platea tortor ultrices urna placerat rhoncus diam elementum. Sed! Duis, massa, porta odio, dapibus dapibus, lundium in turpis nunc et tempor. Lacus dictumst vel et cras tortor nec nec, elementum facilisis, sed penatibus?</p>
+							@speaker.GetPropertyValue("pageText")
 							<ul class="inline">
-								<li><a href="#"><i class="icon-twitter"></i>Twitter</a></li>
-								<li><a href="#"><i class="icon-facebook"></i>Facebook</a></li>
-								<li><a href="#"><i class="icon-linkedin"></i>LinkedIn</a></li>
-								<li><a href="#"><i class="icon-google-plus"></i>Google+</a></li>
+								@if (speaker.HasValue("twitter")) {
+									<li><a href="@(speaker.GetPropertyValue<string>("twitter"))"><i class="icon-twitter"></i>Twitter</a></li>
+								}
+								@if (speaker.HasValue("facebook")) {
+									<li><a href="@(speaker.GetPropertyValue<string>("facebook"))"><i class="icon-facebook"></i>Facebook</a></li>
+								}
+								@if (speaker.HasValue("linkedIn")) {
+									<li><a href="@(speaker.GetPropertyValue<string>("linkedIn"))"><i class="icon-linkedin"></i>LinkedIn</a></li>
+								}
+								@if (speaker.HasValue("google")) {
+									<li><a href="@(speaker.GetPropertyValue<string>("google"))"><i class="icon-google-plus"></i>Google+</a></li>
+								}
 							</ul>
 						</div>
 					</div>

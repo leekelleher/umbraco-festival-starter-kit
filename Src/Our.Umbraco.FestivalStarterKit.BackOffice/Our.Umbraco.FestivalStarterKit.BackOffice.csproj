@@ -120,7 +120,6 @@
       <HintPath>..\..\packages\UmbracoCms.Core.6.0.3\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\UmbracoCms.Core.6.0.3\lib\System.Data.SqlServerCe.dll</HintPath>
@@ -216,19 +215,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\SpeakerPicker.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DataTypes\StylePicker.cs" />
     <Compile Include="DocumentTypes\ContactPage.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
-    <Compile Include="DocumentTypes\FAQ.cs" />
-    <Compile Include="DocumentTypes\FAQAnswer.cs" />
-    <Compile Include="DocumentTypes\FAQListing.cs" />
+    <Compile Include="DocumentTypes\Faq.cs" />
+    <Compile Include="DocumentTypes\FaqListing.cs" />
     <Compile Include="DocumentTypes\FestivalStarterKit.cs" />
     <Compile Include="DocumentTypes\Homepage.cs" />
-    <Compile Include="DocumentTypes\Mixins\Content.cs" />
-    <Compile Include="DocumentTypes\Mixins\Alert.cs" />
-    <Compile Include="DocumentTypes\Mixins\Meta.cs" />
-    <Compile Include="DocumentTypes\Mixins\UmbracoProperties.cs" />
-    <Compile Include="DocumentTypes\Mixins\Webmaster.cs" />
     <Compile Include="DocumentTypes\NewsListing.cs" />
     <Compile Include="DocumentTypes\NewsPage.cs" />
     <Compile Include="DocumentTypes\SessionListing.cs" />
@@ -242,9 +238,6 @@
     <Compile Include="DocumentTypes\VenuePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tabs.cs" />
-    <Compile Include="Templates.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,18 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-	Layout = "FestivalStarterKit.cshtml";
-}
+@{ Layout = "FestivalStarterKit.cshtml"; }
 
 @section HtmlBodyContent
 {
-	@Umbraco.Field("pageTitle", "pageName", insertBefore: "<h1>", insertAfter: "</h1>")
-	@Umbraco.Field("pageText")
-
 	<ul>
 		@foreach (var sponsor in Model.Content.Children)
 		{
 			<li>
-				<a href="@Umbraco.Coalesce(sponsor.GetPropertyValue("sponsorLink"), sponsor.NiceUrl())">
+				<a href="@Umbraco.Coalesce(sponsor.GetPropertyValue("sponsorLink"), sponsor.Url)">
 					<img src="@sponsor.GetPropertyValue("sponsorLogo")" alt="@sponsor.Name" />
 					<span>@Umbraco.Coalesce(sponsor.GetPropertyValue("pageTitle"), sponsor.Name)</span>
 					<span>@sponsor.GetPropertyValue("pageText")</span>

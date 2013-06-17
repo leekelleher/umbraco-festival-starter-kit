@@ -13,50 +13,50 @@
 
 @section HtmlBodyFooter
 {
-	@if (Model.Content.HasValue("festivalStartDate"))
- {
+	@if (Model.Content.HasValue("festivalStartDate")) {
+		var time = Math.Round(Model.Content.GetPropertyValue<DateTime>("festivalStartDate").Subtract(DateTime.UtcNow).TotalSeconds, 0);
 		<script src="/js/flipclock/libs/prefixfree.min.js"></script>
 		<script src="/js/flipclock/flipclock.min.js"></script>
 		<script>
 			$(function () {
-				var clock = $('#countdown').FlipClock(@(Math.Round(Model.Content.GetPropertyValue<DateTime>("festivalStartDate").Subtract(DateTime.UtcNow).TotalSeconds, 0)), {
+				var clock = $('#countdown').FlipClock(@(time), {
 					clockFace: 'DailyCounter',
 					countdown: true
 				});
 			});
 		</script>
- }
+	}
 }
 
 @section HtmlBodyContent
 {
-	@if (Model.Content.HasValue("festivalTwitterUsername") || Model.Content.HasValue("festivalStartDate"))
-	{
-		<div class="row">
-			<div class="span4">
+	<div class="row">
+		@if (Model.Content.HasValue("festivalTwitterUsername")) {
+			<div class="span5">
 				<div class="well">
-					<span>Follow us for updates</span>
-					<a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a>
+					<h3>Follow us for updates</h3>
+					<h3><a href="http://twitter.com/@Model.Content.GetPropertyValue("festivalTwitterUsername")">@@@Model.Content.GetPropertyValue("festivalTwitterUsername")</a></h3>
 				</div>
 			</div>
-			<div class="span8">
+		}
+		@if (Model.Content.HasValue("festivalStartDate")) {
+			<div class="span7">
 				<div class="well">
 					<div id="countdown"></div>
-					<div style="clear:both;"></div>
+					<div style="clear:both;margin-bottom:5px;"></div>
 				</div>
 			</div>
-		</div>
-	}
+		}
+	</div>
 
 	<ul class="thumbnails thumbnails-centered">
-		@foreach (var speaker in Model.Content.Descendants("SpeakerPage"))
-		{
+		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").Take(12).RandomOrder()) {
+			var session = Model.Content.Descendants("SessionPage").Where(x => x.GetPropertyValue<int>("speaker") == speaker.Id).FirstOrDefault();
 			<li>
-				<a href="@speaker.NiceUrl()">
+				<a href="@(session != null ? session.Url : speaker.Url)">
 					<div class="thumbnail">
 						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140" height="146" alt="@speaker.Name" />
-						@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)<br>
-						<small>@speaker.GetPropertyValue("pageText")</small>
+						<small>@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)</small>
 					</div>
 				</a>
 			</li>
