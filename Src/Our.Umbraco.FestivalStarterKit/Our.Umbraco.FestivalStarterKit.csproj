@@ -244,10 +244,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\dummy.txt" />
     <Content Include="css\override.css" />
+    <Content Include="default.aspx" />
     <Content Include="js\bootswatch.js" />
+    <Content Include="macroScripts\dummy.txt" />
+    <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\dummy.txt" />
+    <Content Include="usercontrols\dummy.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +310,54 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Styles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xslt\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\xsltExtensions.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\UrlRewriting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\tinyMceConfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\Skinning.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\scripting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\restExtensions.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\metablogConfig.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\FileSystemProviders.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\feedProxy.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\ExamineSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\ExamineIndex.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\EmbeddedMedia.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\BaseRestExtensions.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\404handlers.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -118,6 +118,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\Our.Umbraco.uGoLive.Checks.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.9.54.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\ServiceStack.Text.3.9.54\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.4902.15216, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\SQLCE4Umbraco.dll</HintPath>
@@ -176,6 +180,54 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\TidyNet.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.4902.15217, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.4902.15214, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.4902.15215, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.4902.15218, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.4902.15218, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.macroRenderings, Version=1.0.4902.15216, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.macroRenderings.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.4902.15216, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.4902.15219, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.XmlSerializers, Version=1.0.4902.15217, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\umbraco.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.6.0.15215, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\UmbracoExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\UmbracoCms.Core.6.1.1\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
     <Reference Include="Vega.USiteBuilder">
       <HintPath>..\..\Lib\Vega.USiteBuilder.dll</HintPath>
     </Reference>
@@ -187,8 +239,6 @@
     <Compile Include="DataTypes\StylePicker.cs" />
     <Compile Include="DocumentTypes\ContactPage.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
-    <Compile Include="DocumentTypes\Faq.cs" />
-    <Compile Include="DocumentTypes\FaqListing.cs" />
     <Compile Include="DocumentTypes\FestivalStarterKit.cs" />
     <Compile Include="DocumentTypes\Homepage.cs" />
     <Compile Include="DocumentTypes\NewsListing.cs" />
