@@ -10,19 +10,23 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="../">@homepage.GetPropertyValue("festivalTitle")</a>
+				<a class="brand" href="/">@homepage.GetPropertyValue("festivalTitle")</a>
 				@if (nodes != null && nodes.Count() > 0)
 				{
 					<div class="nav-collapse collapse" id="main-menu">
 						<ul class="nav" id="main-menu-left">
 							@foreach (var node in nodes) {
-								<li @Html.Raw(node.Id==Model.Content.Id ? "class=\"active\"" : "")><a href="@node.Url">@node.Name</a></li>
+								<li @Html.Raw(node.Id == Model.Content.Id ? "class=\"active\"" : "")>
+									<a href="@node.Url">@node.Name</a>
+								</li>
 							}
 						</ul>
 						@if (homepage.HasValue("festivalTicketUrl"))
 						{
 							<ul class="nav pull-right" id="main-menu-right">
-								<li><a target="_blank" href="@homepage.GetPropertyValue("festivalTicketUrl")">Tickets</a></li>
+								<li>
+									<a target="_blank" href="@homepage.GetPropertyValue("festivalTicketUrl")">Buy Tickets</a>
+								</li>
 							</ul>
 						}
 					</div>

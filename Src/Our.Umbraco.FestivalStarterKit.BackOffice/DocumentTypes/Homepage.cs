@@ -7,7 +7,7 @@ namespace Our.Umbraco.FestivalStarterKit.BackOffice.DocumentTypes
 	[DocumentType(Name = "Homepage", IconUrl = "folder.gif",
 		Alias = "Homepage",
 		AllowedTemplates = new[] { "Homepage" },
-		AllowedChildNodeTypes = new[] { typeof(SessionListing), typeof(VenuePage), typeof(NewsListing), typeof(SponsorListing), typeof(ContactPage), typeof(ContentPage), typeof(SpeakerListing), typeof(FaqListing), })]
+		AllowedChildNodeTypes = new[] { typeof(SessionListing), typeof(VenuePage), typeof(NewsListing), typeof(SponsorListing), typeof(ContactPage), typeof(ContentPage), typeof(SpeakerListing) })]
 	public partial class Homepage : FestivalStarterKit
 	{
 		#region ctor

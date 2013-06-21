@@ -49,19 +49,28 @@
 		}
 	</div>
 
-	<ul class="thumbnails thumbnails-centered">
-		@foreach (var speaker in Model.Content.Descendants("SpeakerPage").Take(12).RandomOrder()) {
-			var session = Model.Content.Descendants("SessionPage").Where(x => x.GetPropertyValue<int>("speaker") == speaker.Id).FirstOrDefault();
-			<li>
-				<a href="@(session != null ? session.Url : speaker.Url)">
-					<div class="thumbnail">
-						<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140" height="146" alt="@speaker.Name" />
-						<small>@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)</small>
+	<div class="row">
+		<h2>Featuring sessions by:</h2>
+		@foreach (var row in Model.Content.Descendants("SpeakerPage").Take(12).InGroupsOf(3)) {
+			<div class="row">
+				@foreach (var speaker in row) {
+					var session = Model.Content.Descendants("SessionPage").Where(x => x.GetPropertyValue<int>("speaker") == speaker.Id).FirstOrDefault();
+					<div class="span4 thumbnail">
+						<div class="row">
+							<div class="span2">
+								<img class="img-polaroid" src="@speaker.GetPropertyValue("speakerPhoto")" style="width:140px;height:140px;" width="140" height="146" alt="@speaker.Name" />
+							</div>
+							<div class="span2">
+								<h4>
+									<a href="@(session != null ? session.Url : speaker.Url)">@Umbraco.Coalesce(speaker.GetPropertyValue("pageTitle"), speaker.Name)</a>
+								</h4>
+							</div>
+						</div>
 					</div>
-				</a>
-			</li>
+				}
+			</div>
 		}
-	</ul>
+	</div>
 
 	<!-- Links to View all Speakers; View full schedule -->
 
