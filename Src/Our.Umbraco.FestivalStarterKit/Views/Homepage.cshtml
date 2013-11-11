@@ -15,16 +15,19 @@
 {
 	@if (Model.Content.HasValue("festivalStartDate")) {
 		var time = Math.Round(Model.Content.GetPropertyValue<DateTime>("festivalStartDate").Subtract(DateTime.UtcNow).TotalSeconds, 0);
-		<script src="/js/flipclock/libs/prefixfree.min.js"></script>
-		<script src="/js/flipclock/flipclock.min.js"></script>
-		<script>
-			$(function () {
-				var clock = $('#countdown').FlipClock(@(time), {
-					clockFace: 'DailyCounter',
-					countdown: true
+		if (time > 0)
+		{
+			<script src="/js/flipclock/libs/prefixfree.min.js"></script>
+			<script src="/js/flipclock/flipclock.min.js"></script>
+			<script>
+				$(function () {
+					var clock = $('#countdown').FlipClock(@(time), {
+						clockFace: 'DailyCounter',
+						countdown: true
+					});
 				});
-			});
-		</script>
+			</script>
+		}
 	}
 }
 
