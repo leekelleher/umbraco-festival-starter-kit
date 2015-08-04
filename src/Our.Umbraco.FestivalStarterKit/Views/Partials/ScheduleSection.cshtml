@@ -1,0 +1,48 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.ScheduleSection>
+
+<h2 class="section-title">@Model.View.Name</h2>
+
+@Model.View.Intro
+
+<div class="schedule-tbl">
+    <table>
+        <thead>
+            <tr>
+                <th class="schedule-time">Time</th>
+                <th class="schedule-slot">Slot</th>
+                <th class="schedule-description">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var session in Model.View.Sessions)
+            {
+                if (session.SessionType == "ScheduleSession")
+                {
+                    var speaker = session.Speakers.FirstOrDefault();
+                    <tr>
+                        <td class="schedule-time">@session.Time</td>
+                        <td class="schedule-slot">
+                            @if (!string.IsNullOrWhiteSpace(speaker.SpeakerPhoto))
+                            {
+                            <span class="speaker-photo">
+                                <img class="photo" src="@speaker.SpeakerPhoto" alt="@speaker.SpeakerPhoto">
+                            </span>
+                            }
+                            @session.Title
+                            <span class="speakers-company">@speaker.SpeakerCompany</span>
+                        </td>
+                        <td class="schedule-description">@session.Description</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr class="schedule-other">
+                        <td class="schedule-time">@session.Time</td>
+                        <td class="schedule-slot">@session.Title</td>
+                        <td class="schedule-description">-</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

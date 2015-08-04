@@ -1,10 +1,11 @@
-# GIT IGNORE FILE
 [Bb]in
 [Oo]bj
 
+.vs
 _ReSharper.*
 *.suo
 *.user
+*.userprefs
 *.cache
 *.orig
 .DS_Store
@@ -12,24 +13,7 @@ Thumbs.db
 dummy.txt
 empty.txt
 
-packages/*
-src/_html/*
-src/Our.Umbraco.FestivalStarterKit/App_Browsers/*
-src/Our.Umbraco.FestivalStarterKit/App_Code/*
-src/Our.Umbraco.FestivalStarterKit/App_Data/*
-src/Our.Umbraco.FestivalStarterKit/App_Plugins/*
-src/Our.Umbraco.FestivalStarterKit/bin/*
-src/Our.Umbraco.FestivalStarterKit/config/*
-src/Our.Umbraco.FestivalStarterKit/css/bootswatch/*
-src/Our.Umbraco.FestivalStarterKit/*/flipclock*
-src/Our.Umbraco.FestivalStarterKit/*.as*
-src/Our.Umbraco.FestivalStarterKit/install/*
-src/Our.Umbraco.FestivalStarterKit/macroScripts/*
-src/Our.Umbraco.FestivalStarterKit/masterpages/*
-src/Our.Umbraco.FestivalStarterKit/umbraco/*
-src/Our.Umbraco.FestivalStarterKit/umbraco_client/*
-src/Our.Umbraco.FestivalStarterKit/usercontrols/*
-src/Our.Umbraco.FestivalStarterKit/web.config
-src/Our.Umbraco.FestivalStarterKit/xslt/*
-Src/Our.Umbraco.FestivalStarterKit/web.config
-Src/Our.Umbraco.FestivalStarterKit/web.config
+src/packages/*/**
+TEMP/
+Logs/
+NuGetBackup/

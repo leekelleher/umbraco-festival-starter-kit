@@ -1,0 +1,29 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.Homepage>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="wrapper">
+        <h1 class="logo-name">
+            <a class="logo-link" href="#" title="@Model.View.FestivalName" itemprop="name">@Model.View.FestivalName</a>
+        </h1>
+        <h2 class="tagline">@Model.View.VenueAddress</h2>
+
+        @if (!string.IsNullOrWhiteSpace(Model.View.TicketPrice) || !string.IsNullOrWhiteSpace(Model.View.LinkUrl))
+        {
+        <div class="call-action-area">
+            @if (!string.IsNullOrWhiteSpace(Model.View.TicketPrice))
+            {
+            <span class="price">Only @Model.View.TicketPrice</span>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.View.LinkUrl))
+            {
+            <a href="@Model.View.LinkUrl" class="call-action-link" title="@Model.View.LinkText">@Model.View.LinkText</a>
+            }
+        </div>
+        }
+    </div>
+</header>
+<!--  / HEADER -->
+
+<hr>

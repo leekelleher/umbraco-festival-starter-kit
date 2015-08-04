@@ -1,0 +1,36 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.SpeakersSection>
+
+<h2 class="section-title">@Model.View.Name</h2>
+
+<ul class="speakers-list">
+    @foreach (var speaker in Model.View.FeaturedSpeakers)
+    {
+    <li class="speakers-item" itemprop="performer" itemscope itemtype="http://schema.org/Person">
+        @if (!string.IsNullOrWhiteSpace(speaker.SpeakerPhoto))
+        {
+        <span class="speaker-photo">
+            <img class="photo" src="@speaker.SpeakerPhoto" alt="@speaker.SpeakerName" itemprop="image">
+        </span>
+        }
+
+        @if (speaker.Session != null)
+        {
+        <h3 class="speech-title">
+            @if (!string.IsNullOrWhiteSpace(speaker.Session.Time))
+            {
+            <span class="speech-time">@speaker.Session.Time</span>
+            }
+            <span> @speaker.Session.Title</span>
+        </h3>
+        }
+
+        <h3 class="speakers-name">@speaker.SpeakerName 
+            @if (!string.IsNullOrWhiteSpace(speaker.SpeakerLinkUrl))
+            {
+                <a href="@speaker.SpeakerLinkUrl" title="@speaker.SpeakerLinkText">@speaker.SpeakerLinkText</a>
+            }
+        </h3>
+        <p class="speakers-bio">@speaker.SpeakerBio</p>
+    </li>
+    }
+</ul>

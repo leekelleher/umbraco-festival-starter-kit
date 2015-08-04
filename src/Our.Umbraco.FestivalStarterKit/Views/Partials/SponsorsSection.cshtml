@@ -1,0 +1,22 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.SponsorsSection>
+
+<h2 class="section-title">@Model.View.Name</h2>
+<ul class="sponsors-list">
+
+    @foreach (var sponsor in Model.View.Sponsors)
+    {
+        if (!string.IsNullOrWhiteSpace(sponsor.Logo))
+        {
+            <li class="sponsor-item" itemscope itemtype="http://schema.org/Organization">
+                <a href="@sponsor.LinkUrl" class="sponsor-logo sponsor--link" itemprop="url">
+                    <img src="@sponsor.Logo" alt="@sponsor.Name" class="photo" itemprop="image">
+                </a>
+            </li>
+        }
+    }
+    <li class="sponsor-item">
+        <a class="sponsor-logo sponsor--link sponsor-call" href="#">
+            <img src="/assets/img/your-logo.jpg" alt="your logo" class="photo">
+        </a>
+    </li>
+</ul>

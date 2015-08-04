@@ -1,0 +1,5 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.ContentSection>
+
+<h2 class="section-title">@Model.View.Name</h2>
+
+@Model.Content.GetGridHtml("content")

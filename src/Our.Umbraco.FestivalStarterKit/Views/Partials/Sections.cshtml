@@ -1,0 +1,12 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView
+
+@foreach (var item in Model.Content.Children(x=> x.DocumentTypeAlias.EndsWith("Section")))
+{
+<!-- @item.UrlName.ToUpperInvariant() -->
+
+<section class="@item.UrlName" id="@item.UrlName">
+    @Html.Partial(item.DocumentTypeAlias, item)
+</section>
+
+<!-- / @item.UrlName.ToUpperInvariant() -->
+}

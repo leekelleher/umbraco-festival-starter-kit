@@ -1,0 +1,11 @@
+﻿@inherits DitFlo.Web.Mvc.DitFloView<Our.Umbraco.FestivalStarterKit.App_Code.Models.LocationSection>
+
+<h2 class="section-title">@Model.View.Name</h2>
+
+<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">@Model.View.Address</span>,
+    <span itemprop="addressLocality"> @Model.View.City</span>,
+    <span itemprop="addressRegion"> @Model.View.State</span>
+</p>
+
+<div id="map-canvas" class="location-area" data-address="@Model.View.Address, @Model.View.City - @Model.View.State"></div>
