@@ -13,8 +13,7 @@ namespace Our.Umbraco.FestivalStarterKit.App_Code.ValueResolvers
                 return Enumerable.Empty<MenuLink>();
 
             return Content
-                .AncestorsOrSelf(1)
-                .First()
+                .AncestorOrSelf(1)
                 .Children
                 .Where(x => x.IsVisible() && x.DocumentTypeAlias.EndsWith("Section"))
                 .As<MenuLink>();
