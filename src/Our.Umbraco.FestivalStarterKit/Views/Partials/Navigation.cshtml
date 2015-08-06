@@ -1,12 +1,12 @@
-﻿@inherits DitFlo.Web.Mvc.DitFloView
+﻿@inherits DitFloView<Navigation>
 
 <!-- NAVIGATION -->
 <nav id="nav">
     <ul class="wrapper">
-        @foreach (var item in Model.Content.Children(x => x.DocumentTypeAlias.EndsWith("Section")))
+        @foreach (var item in Model.View.MenuItems)
         {
         <li class="nav-item">
-            <a href="#@item.UrlName" title="@item.Name" class="nav-link">@item.Name</a>
+            <a href="@item.Url" title="@item.Label" class="nav-link">@item.Label</a>
         </li>
         }
     </ul>

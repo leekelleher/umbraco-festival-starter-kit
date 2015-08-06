@@ -253,6 +253,14 @@
     <Content Include="App_Code\Models\SponsorsSection.cs" />
     <Content Include="App_Code\Models\Sponsor.cs" />
     <Content Include="App_Code\Models\ContactSection.cs" />
+    <Content Include="App_Code\Models\Navigation.cs" />
+    <Content Include="App_Code\ValueResolvers\SectionValueResolver.cs" />
+    <Content Include="App_Code\Models\MenuLink.cs" />
+    <Content Include="App_Code\Bootstrapper.cs" />
+    <Content Include="App_Code\UrlProviders\SectionsUrlProvider.cs" />
+    <Content Include="App_Code\Models\Sections.cs" />
+    <Content Include="App_Code\ValueResolvers\MenuLinkValueResolver.cs" />
+    <Content Include="App_Code\Models\Section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
